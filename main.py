@@ -12,6 +12,7 @@ LONG_BREAK_MIN = 20
 reps = 0
 timer = NONE
 
+
 # ---------------------------- TIMER RESET ------------------------------- # 
 def reset_timer():
     window.after_cancel(timer)
@@ -20,6 +21,8 @@ def reset_timer():
     check_mark_label.config(text="")
     global reps
     reps = 0
+
+
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
     global reps
@@ -38,7 +41,9 @@ def start_timer():
         count_down(work_sec)
         title_label.config(text="Start Coding", fg=GREEN)
 
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
+
+
 def count_down(count):
 
     count_min = math.floor(count / 60)
@@ -64,8 +69,7 @@ window = Tk()
 window.title("pomodoro")
 window.config(padx=100, pady=50, bg=YELLOW)
 
-
-
+# tomato canvas
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 tomato_img = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
